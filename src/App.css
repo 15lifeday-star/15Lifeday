@@ -1,0 +1,1946 @@
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding-bottom: calc(112px + env(safe-area-inset-bottom, 0px));
+  color: var(--text);
+}
+
+.app-header {
+  width: 100%;
+  max-width: 960px;
+  height: 68px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand,
+.header-actions,
+.brand-mark,
+.section-heading,
+.mission-meta,
+.goal-line {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  gap: 9px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--primary-strong);
+  color: #fff;
+  font-size: 20px;
+}
+
+.header-actions {
+  gap: 12px;
+}
+
+.language-button,
+.header-icon,
+.avatar {
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-button {
+  min-width: 34px;
+  height: 32px;
+  border-radius: 16px;
+  background: var(--surface);
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.header-icon {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 20px;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary-strong);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #EDE8F8;
+  color: #8372AE;
+  font-weight: 700;
+}
+
+.profile-popover {
+  position: absolute;
+  z-index: 10;
+  top: 58px;
+  right: max(20px, calc((100vw - 912px) / 2));
+  display: grid;
+  gap: 6px;
+  width: 210px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.profile-popover strong {
+  padding: 4px 8px 8px;
+}
+
+.profile-popover button {
+  padding: 9px 8px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.profile-popover button:hover {
+  background: var(--surface-soft);
+}
+
+.overview {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 8px 24px 32px;
+  display: grid;
+  gap: 14px;
+}
+
+.greeting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 0 2px;
+}
+
+.greeting h1 {
+  margin: 0;
+  font-size: clamp(24px, 4vw, 30px);
+  letter-spacing: -0.8px;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.greeting-period {
+  color: var(--primary-strong);
+}
+
+.greeting p {
+  margin: 5px 0 0;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.today-label {
+  align-self: center;
+  padding: 7px 11px;
+  border-radius: 20px;
+  background: var(--surface);
+  color: var(--text-secondary);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.mission-card {
+  position: relative;
+  min-height: 178px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  overflow: hidden;
+  padding: 18px 18px 16px;
+  border-radius: 20px;
+  background: #FBE6D8;
+  color: #35342F;
+}
+
+.mission-content {
+  position: relative;
+  z-index: 1;
+  width: 65%;
+  min-width: 0;
+}
+
+.mission-meta {
+  justify-content: space-between;
+  gap: 8px;
+  color: #A85C3B;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.35px;
+}
+
+.mission-count {
+  padding: 4px 7px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.65);
+  color: #A85C3B;
+  font-size: 9px;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.mission-card h2 {
+  max-width: 270px;
+  margin: 12px 0 5px;
+  font-size: clamp(19px, 3.2vw, 24px);
+  line-height: 1.15;
+  letter-spacing: -0.45px;
+  font-weight: 800;
+}
+
+.mission-card p {
+  margin: 0;
+  color: #946B57;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 34px;
+  margin-top: 13px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 11px;
+  background: var(--primary-strong);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  filter: brightness(0.97);
+}
+
+.mission-illustration {
+  position: relative;
+  flex: 0 0 34%;
+  min-width: 76px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.mission-image-slot {
+  width: 100%;
+  max-width: 150px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.mission-illustration img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.completion-ring {
+  --progress: 240deg;
+  position: relative;
+  right: auto;
+  bottom: auto;
+  flex-shrink: 0;
+  width: 43px;
+  height: 43px;
+  padding: 3px;
+  border-radius: 50%;
+  background: conic-gradient(var(--primary-strong) var(--progress), rgba(228, 124, 80, 0.18) 0);
+}
+
+.completion-ring > div {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #FBE6D8;
+  color: #B35E3B;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.section-card {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid rgba(128, 108, 85, 0.035);
+  border-radius: 19px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.section-heading {
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 11px;
+}
+
+.section-heading h2,
+.glance-card > h2 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -0.1px;
+}
+
+.section-count,
+.text-link {
+  color: var(--primary-strong);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.text-link {
+  padding: 4px 0 4px 8px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.ritual-list {
+  display: grid;
+  gap: 1px;
+}
+
+.ritual-row {
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 3px 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.ritual-check {
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: white;
+  font-size: 10px;
+}
+
+.ritual-row.is-complete .ritual-check {
+  border-color: #D9E9DF;
+  background: #D9E9DF;
+  color: #5B8B70;
+}
+
+.ritual-label {
+  flex: 1;
+  color: var(--text-secondary);
+  font-size: 10px;
+}
+
+.ritual-row.is-complete .ritual-label {
+  color: var(--text-muted);
+}
+
+.ritual-icon {
+  width: 20px;
+  text-align: center;
+  color: #7E9C84;
+  font-size: 14px;
+}
+
+.ritual-move {
+  color: #A79A85;
+}
+
+.ritual-moon {
+  color: #9A8EB3;
+}
+
+.goals-card .section-heading {
+  margin-bottom: 12px;
+}
+
+.goal-row + .goal-row {
+  margin-top: 13px;
+}
+
+.goal-line {
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 10px;
+}
+
+.goal-line strong {
+  color: var(--primary-strong);
+  font-size: 10px;
+}
+
+.goal-line .goal-purple {
+  color: #8D79B7;
+}
+
+.progress-track {
+  width: 100%;
+  height: 4px;
+  margin-top: 6px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: var(--surface-soft);
+}
+
+.progress-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.progress-peach {
+  background: var(--primary-strong);
+}
+
+.progress-purple {
+  background: #8D79B7;
+}
+
+.goal-row > small {
+  display: block;
+  margin-top: 5px;
+  color: var(--text-muted);
+  font-size: 9px;
+}
+
+.week-card .section-heading {
+  margin-bottom: 13px;
+}
+
+.week-card .section-heading p {
+  margin: 4px 0 0;
+  color: var(--text-secondary);
+  font-size: 10px;
+}
+
+.week-chart {
+  height: 92px;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 9px;
+  align-items: end;
+}
+
+.week-column {
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.week-bar-track {
+  width: 100%;
+  max-width: 26px;
+  height: 72px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--surface-soft);
+}
+
+.week-bar-track span {
+  display: block;
+  width: 100%;
+  border-radius: 6px;
+  background: #C8DDCF;
+}
+
+.week-column-active .week-bar-track span {
+  background: #8D79B7;
+}
+
+.week-column small {
+  color: var(--text-muted);
+  font-size: 9px;
+}
+
+.streak-card {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 72px;
+  padding: 14px;
+  border-radius: 18px;
+  background: #EEE8FA;
+  color: #51436F;
+}
+
+.streak-icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 36px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #8D79B7;
+  font-size: 21px;
+}
+
+.streak-card h2 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.streak-card p {
+  margin: 4px 0 0;
+  color: #8372A3;
+  font-size: 10px;
+}
+
+.glance-card > h2 {
+  margin-bottom: 12px;
+}
+
+.glance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.glance-grid > div {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.glance-grid strong {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.glance-grid span {
+  color: var(--text-muted);
+  font-size: 9px;
+}
+
+.glance-peach {
+  color: var(--primary-strong);
+}
+
+.glance-green {
+  color: #6F927A;
+}
+
+.glance-purple {
+  color: #8D79B7;
+}
+
+.bottom-navigation {
+  position: fixed;
+  z-index: 20;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: calc(87px + env(safe-area-inset-bottom, 0px));
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: start;
+  padding: 13px 10px calc(21px + env(safe-area-inset-bottom, 0px));
+  border-radius: 22px 22px 0 0;
+  background: var(--surface);
+  box-shadow: 0 -5px 24px rgba(53, 42, 32, 0.08);
+}
+
+.bottom-item {
+  position: relative;
+  min-width: 0;
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  padding: 2px 0 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.bottom-icon {
+  font-size: 20px;
+  line-height: 22px;
+}
+
+.bottom-item small {
+  max-width: 100%;
+  overflow: hidden;
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bottom-item.active {
+  color: var(--primary-strong);
+}
+
+.bottom-item i {
+  position: absolute;
+  bottom: 0;
+  width: 13px;
+  height: 2px;
+  border-radius: 4px;
+  background: var(--primary-strong);
+}
+
+.bottom-add {
+  position: relative;
+  top: -24px;
+  justify-self: center;
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--bg);
+  border-radius: 50%;
+  background: var(--primary-strong);
+  color: white;
+  box-shadow: 0 5px 12px rgba(233, 164, 124, 0.24);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.home-indicator {
+  position: absolute;
+  bottom: calc(6px + env(safe-area-inset-bottom, 0px));
+  left: 50%;
+  width: 108px;
+  height: 4px;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  background: var(--text);
+}
+
+.toast-message {
+  position: fixed;
+  z-index: 30;
+  bottom: 102px;
+  left: 50%;
+  max-width: calc(100vw - 32px);
+  padding: 11px 16px;
+  transform: translateX(-50%);
+  border-radius: 12px;
+  background: var(--text);
+  color: var(--bg);
+  font-size: 12px;
+  box-shadow: var(--shadow);
+}
+
+:root[data-theme='dark'] .mission-card {
+  background: #3A2B23;
+  color: #F5EDE5;
+}
+
+:root[data-theme='dark'] .mission-meta,
+:root[data-theme='dark'] .mission-count {
+  color: #FFD5B8;
+}
+
+:root[data-theme='dark'] .mission-count {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+:root[data-theme='dark'] .mission-image-slot {
+  border: none;
+  background: transparent;
+}
+
+:root[data-theme='dark'] .mission-card p {
+  color: #D8C5B8;
+}
+
+:root[data-theme='dark'] .completion-ring > div {
+  background: #3A2B23;
+  color: #FFD5B8;
+}
+
+:root[data-theme='dark'] .primary-button {
+  background: var(--primary-strong);
+  color: #35251D;
+}
+
+:root[data-theme='dark'] .streak-card {
+  background: #30263E;
+  color: #F0E9FC;
+}
+
+:root[data-theme='dark'] .streak-card p {
+  color: #C8B8E5;
+}
+
+:root[data-theme='dark'] .streak-icon {
+  background: #443653;
+}
+
+@media (min-width: 700px) {
+  .app-header {
+    height: 76px;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .overview {
+    padding: 14px 30px 40px;
+    gap: 18px;
+  }
+
+  .mission-card {
+    min-height: 218px;
+    padding: 24px 26px;
+  }
+
+  .mission-content {
+    width: 58%;
+  }
+
+  .mission-illustration {
+    flex-basis: 40%;
+  }
+
+  .mission-image-slot {
+    height: 130px;
+    max-width: 220px;
+  }
+
+  .completion-ring {
+    width: 52px;
+    height: 52px;
+    right: 4px;
+    bottom: 4px;
+  }
+
+  .section-card {
+    padding: 20px;
+  }
+
+  .ritual-row {
+    min-height: 34px;
+  }
+
+  .ritual-label,
+  .goal-line,
+  .goal-line strong {
+    font-size: 12px;
+  }
+
+  .week-chart {
+    height: 110px;
+  }
+
+  .week-bar-track {
+    height: 88px;
+  }
+
+  .bottom-navigation {
+    right: 50%;
+    left: 50%;
+    width: min(100%, 960px);
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 800px) {
+  .overview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+  }
+  .greeting {
+    grid-column: 1 / -1;
+  }
+  .mission-card,
+  .rituals-card,
+  .goals-card,
+  .week-card,
+  .streak-card,
+  .glance-card {
+    grid-column: span 1;
+    min-width: 0;
+  }
+  .mission-card {
+    min-height: 218px;
+  }
+  .bottom-navigation {
+    border-radius: 22px 22px 0 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .app-header {
+    height: 60px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .overview {
+    padding: 8px 14px 24px;
+    gap: 12px;
+  }
+
+  .brand {
+    font-size: 15px;
+  }
+
+  .header-actions {
+    gap: 7px;
+  }
+
+  .greeting h1 {
+    font-size: 23px;
+  }
+
+  .mission-card {
+    min-height: 172px;
+    padding: 15px 13px;
+  }
+
+  .mission-content {
+    width: 69%;
+  }
+
+  .mission-card h2 {
+    font-size: 18px;
+  }
+
+  .mission-illustration {
+    flex-basis: 28%;
+    min-width: 58px;
+  }
+
+  .completion-ring {
+    width: 39px;
+    height: 39px;
+  }
+
+  .section-card {
+    padding: 14px;
+  }
+
+  .bottom-navigation {
+    padding-right: 4px;
+    padding-left: 4px;
+  }
+
+  .bottom-item small {
+    font-size: 8px;
+  }
+}
+
+/* =========================================================
+   RE:BUILD Overview Responsive Layout
+   SVG-based responsive override
+   ========================================================= */
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 699px) {
+  .overview {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 8px 16px 30px;
+  }
+
+  .greeting,
+  .mission-card,
+  .rituals-card,
+  .goals-card,
+  .week-card,
+  .streak-card,
+  .glance-card {
+    grid-column: 1;
+  }
+
+  .mission-card {
+    min-height: 178px;
+  }
+
+  .bottom-navigation {
+    right: 12px;
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    left: 12px;
+    width: auto;
+    height: 68px;
+    padding: 8px 8px;
+    border-radius: 34px;
+    align-items: center;
+    background: var(--surface);
+    box-shadow: 0 8px 28px rgba(53, 42, 32, 0.14);
+  }
+
+  .bottom-item {
+    height: 48px;
+    justify-content: center;
+    padding-top: 0;
+  }
+
+  .bottom-add {
+    top: -17px;
+  }
+
+  .home-indicator {
+    display: none;
+  }
+
+  .toast-message {
+    bottom: 92px;
+  }
+}
+
+
+/* ---------- iPad Portrait ---------- */
+
+@media (min-width: 700px) and (max-width: 999px) {
+  .overview {
+    width: min(calc(100% - 48px), 788px);
+    max-width: 788px;
+    padding: 14px 0 40px;
+    grid-template-columns: 8fr 4fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .greeting {
+    grid-column: 1 / -1;
+  }
+
+  .mission-card {
+    grid-column: 1;
+    grid-row: 2;
+    min-height: 236px;
+    padding: 24px 26px;
+  }
+
+  .rituals-card {
+    grid-column: 2;
+    grid-row: 2;
+    min-height: 236px;
+  }
+
+  .goals-card {
+    grid-column: 1;
+    grid-row: 3;
+    min-height: 192px;
+  }
+
+  .week-card {
+    grid-column: 2;
+    grid-row: 3;
+    min-height: 192px;
+  }
+
+  .streak-card {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    min-height: 64px;
+    height: 64px;
+    padding: 12px 16px;
+  }
+
+  .glance-card {
+    grid-column: 1 / -1;
+    grid-row: 5;
+    min-height: 114px;
+    height: 114px;
+  }
+
+  .mission-content {
+    width: 62%;
+  }
+
+  .mission-illustration {
+    flex-basis: 38%;
+  }
+
+  .mission-image-slot {
+    height: 130px;
+    max-width: 210px;
+  }
+
+  .completion-ring {
+    width: 50px;
+    height: 50px;
+  }
+
+  .section-card {
+    padding: 20px;
+  }
+
+  .week-chart {
+    height: 110px;
+  }
+
+  .week-bar-track {
+    height: 88px;
+  }
+
+  .bottom-navigation {
+    right: 24px;
+    bottom: 16px;
+    left: 24px;
+    width: auto;
+    height: 72px;
+    padding: 8px 18px;
+    border-radius: 36px;
+    transform: none;
+    align-items: center;
+    box-shadow: 0 8px 28px rgba(53, 42, 32, 0.14);
+  }
+
+  .bottom-item {
+    height: 50px;
+    justify-content: center;
+    padding-top: 0;
+  }
+
+  .bottom-add {
+    top: -18px;
+  }
+
+  .home-indicator {
+    display: none;
+  }
+}
+
+
+/* ---------- iPad Landscape / Desktop ---------- */
+
+@media (min-width: 1000px) {
+  .overview {
+    width: min(calc(100% - 96px), 1008px);
+    max-width: 1008px;
+    padding: 14px 0 40px;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: auto 192px 114px;
+    column-gap: 24px;
+    row-gap: 24px;
+    align-items: start;
+  }
+
+  .greeting {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .mission-card {
+    grid-column: 1 / span 8;
+    grid-row: 2;
+    min-height: 236px;
+    height: 236px;
+    padding: 24px 26px;
+  }
+
+  .rituals-card {
+    grid-column: 9 / span 4;
+    grid-row: 2;
+    min-height: 236px;
+    height: 236px;
+  }
+
+  .goals-card {
+    grid-column: 1 / span 4;
+    grid-row: 3;
+    min-height: 192px;
+    height: 192px;
+  }
+
+  .week-card {
+    grid-column: 5 / span 4;
+    grid-row: 3;
+    min-height: 192px;
+    height: 192px;
+  }
+
+  .streak-card {
+    grid-column: 9 / span 4;
+    grid-row: 3;
+    min-height: 64px;
+    height: 64px;
+    padding: 12px 16px;
+  }
+
+  .glance-card {
+    grid-column: 9 / span 4;
+    grid-row: 4;
+    min-height: 114px;
+    height: 114px;
+  }
+
+  .mission-content {
+    width: 64%;
+  }
+
+  .mission-illustration {
+    flex-basis: 36%;
+  }
+
+  .mission-image-slot {
+    height: 130px;
+    max-width: 230px;
+  }
+
+  .completion-ring {
+    width: 50px;
+    height: 50px;
+  }
+
+  .section-card {
+    padding: 20px;
+  }
+
+  .week-chart {
+    height: 110px;
+  }
+
+  .week-bar-track {
+    height: 88px;
+  }
+
+  .bottom-navigation {
+    right: 50%;
+    bottom: 18px;
+    left: auto;
+    width: min(568px, calc(100% - 48px));
+    height: 80px;
+    padding: 10px 22px;
+    border-radius: 40px;
+    transform: translateX(50%);
+    align-items: center;
+    box-shadow: 0 10px 32px rgba(53, 42, 32, 0.14);
+  }
+
+  .bottom-item {
+    height: 52px;
+    justify-content: center;
+    padding-top: 0;
+  }
+
+  .bottom-add {
+    top: -16px;
+  }
+
+  .home-indicator {
+    display: none;
+  }
+}
+
+
+/* ---------- Large screens ---------- */
+
+@media (min-width: 1200px) {
+  .overview {
+    width: min(calc(100% - 128px), 1008px);
+  }
+}
+
+
+/* ---------- Dark mode floating navigation ---------- */
+
+:root[data-theme='dark'] .bottom-navigation {
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.28);
+}
+
+
+/* =========================================================
+   15Lifeday — SVG Accurate Overview Layout
+   Source of truth:
+   iPad Portrait 834 × 1194
+   iPad Landscape 1200 × 830
+   ========================================================= */
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 699px) {
+  .overview {
+    width: 100%;
+    max-width: 100%;
+    padding: 8px 16px 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .greeting,
+  .mission-card,
+  .rituals-card,
+  .goals-card,
+  .week-card,
+  .streak-card,
+  .glance-card {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .bottom-navigation {
+    position: fixed;
+    right: 12px;
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    left: 12px;
+
+    width: auto;
+    height: 68px;
+
+    padding: 8px;
+
+    border-radius: 34px;
+
+    transform: none;
+
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: center;
+
+    box-shadow:
+      0 8px 28px rgba(53, 42, 32, 0.14);
+  }
+
+  .bottom-item {
+    height: 48px;
+    justify-content: center;
+    padding-top: 0;
+  }
+
+  .bottom-add {
+    top: -17px;
+  }
+
+  .home-indicator {
+    display: none;
+  }
+
+  .toast-message {
+    bottom: 92px;
+  }
+}
+
+
+/* =========================================================
+   iPAD PORTRAIT
+   834 × 1194 SVG
+   Content width = 788
+   ========================================================= */
+
+@media (min-width: 700px) and (max-width: 999px) {
+
+  .overview {
+    width: min(788px, calc(100% - 48px));
+    max-width: 788px;
+
+    margin: 0 auto;
+
+    padding: 14px 0 40px;
+
+    display: grid;
+
+    grid-template-columns:
+      490px
+      274px;
+
+    column-gap: 24px;
+
+    row-gap: 24px;
+
+    align-items: start;
+  }
+
+
+  /* ---------- Greeting ---------- */
+
+  .greeting {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+
+  /* ---------- Top Row ---------- */
+
+  .mission-card {
+    grid-column: 1;
+    grid-row: 2;
+
+    width: 490px;
+    height: 236px;
+    min-height: 236px;
+
+    box-sizing: border-box;
+
+    padding: 24px 32px;
+
+    border-radius: 24px;
+  }
+
+  .rituals-card {
+    grid-column: 2;
+    grid-row: 2;
+
+    width: 274px;
+    height: 236px;
+    min-height: 236px;
+
+    box-sizing: border-box;
+
+    padding: 20px 24px;
+
+    border-radius: 24px;
+  }
+
+
+  /* ---------- Middle Row ---------- */
+
+  .goals-card {
+    grid-column: 1;
+    grid-row: 3;
+
+    width: 490px;
+    height: 192px;
+    min-height: 192px;
+
+    box-sizing: border-box;
+  }
+
+  .week-card {
+    grid-column: 2;
+    grid-row: 3;
+
+    width: 274px;
+    height: 192px;
+    min-height: 192px;
+
+    box-sizing: border-box;
+  }
+
+
+  /*
+     The SVG uses:
+     Growing = 418
+     Week    = 346
+
+     Because our existing JSX has no wrapper,
+     portrait cards use the available two-column
+     structure while keeping the exact 24px gap.
+  */
+
+
+  /* ---------- Streak ---------- */
+
+  .streak-card {
+    grid-column: 1 / -1;
+    grid-row: 4;
+
+    width: 788px;
+    height: 64px;
+    min-height: 64px;
+
+    box-sizing: border-box;
+
+    padding: 12px 20px;
+
+    border-radius: 20px;
+  }
+
+
+  /* ---------- Glance ---------- */
+
+  .glance-card {
+    grid-column: 1 / -1;
+    grid-row: 5;
+
+    width: 788px;
+    height: 114px;
+    min-height: 114px;
+
+    box-sizing: border-box;
+
+    padding: 20px 28px;
+
+    border-radius: 24px;
+  }
+
+
+  /* ---------- Mission internals ---------- */
+
+  .mission-content {
+    width: 100%;
+  }
+
+  .mission-card h2 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .mission-card p {
+    font-size: 13px;
+  }
+
+  .mission-illustration {
+    position: absolute;
+
+    right: 26px;
+    top: 68px;
+
+    width: 130px;
+    height: 145px;
+
+    display: flex;
+  }
+
+  .mission-image-slot {
+    width: 110px;
+    height: 90px;
+  }
+
+  .completion-ring {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 40px;
+    height: 40px;
+  }
+
+
+  /* ---------- Rituals ---------- */
+
+  .ritual-list {
+    gap: 0;
+  }
+
+  .ritual-row {
+    min-height: 54px;
+    padding: 3px 0;
+  }
+
+  .ritual-label {
+    font-size: 13px;
+  }
+
+
+  /* ---------- Bottom navigation ---------- */
+
+  .bottom-navigation {
+    position: fixed;
+
+    right: 24px;
+    bottom: 18px;
+    left: 24px;
+
+    width: auto;
+    height: 88px;
+
+    padding: 12px 36px;
+
+    border-radius: 44px;
+
+    transform: none;
+
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: center;
+
+    box-shadow:
+      0 8px 28px rgba(53, 42, 32, 0.14);
+  }
+
+  .bottom-item {
+    height: 54px;
+
+    justify-content: center;
+
+    padding-top: 0;
+  }
+
+  .bottom-add {
+    top: -18px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .home-indicator {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   iPAD LANDSCAPE
+   1200 × 830 SVG
+   Content:
+   x = 64
+   width = 1008
+   ========================================================= */
+
+@media (min-width: 1000px) {
+
+  .overview {
+    width: 1008px;
+    max-width: calc(100% - 128px);
+
+    margin: 0 auto;
+
+    padding: 14px 0 40px;
+
+    display: grid;
+
+    grid-template-columns:
+      336px
+      336px
+      352px;
+
+    column-gap: 24px;
+
+    row-gap: 24px;
+
+    align-items: start;
+  }
+
+
+  /* ---------- Greeting ---------- */
+
+  .greeting {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+
+  /* ---------- TOP ROW ---------- */
+
+  .mission-card {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+
+    width: 696px;
+    height: 236px;
+    min-height: 236px;
+
+    box-sizing: border-box;
+
+    padding: 24px 32px;
+
+    border-radius: 24px;
+  }
+
+  .rituals-card {
+    grid-column: 3;
+    grid-row: 2;
+
+    width: 352px;
+    height: 236px;
+    min-height: 236px;
+
+    box-sizing: border-box;
+
+    padding: 20px 24px;
+
+    border-radius: 24px;
+  }
+
+
+  /* ---------- MIDDLE ROW ---------- */
+
+  .goals-card {
+    grid-column: 1;
+    grid-row: 3;
+
+    width: 336px;
+    height: 192px;
+    min-height: 192px;
+
+    box-sizing: border-box;
+  }
+
+  .week-card {
+    grid-column: 2;
+    grid-row: 3;
+
+    width: 336px;
+    height: 192px;
+    min-height: 192px;
+
+    box-sizing: border-box;
+  }
+
+
+  /* ---------- RIGHT STACK ---------- */
+
+  .streak-card {
+    grid-column: 3;
+    grid-row: 3;
+
+    width: 352px;
+    height: 64px;
+    min-height: 64px;
+
+    box-sizing: border-box;
+
+    padding: 12px 16px;
+
+    border-radius: 20px;
+  }
+
+  .glance-card {
+    grid-column: 3;
+    grid-row: 4;
+
+    width: 352px;
+    height: 114px;
+    min-height: 114px;
+
+    box-sizing: border-box;
+
+    padding: 20px 24px;
+
+    border-radius: 24px;
+  }
+
+
+  /* ---------- Mission ---------- */
+
+  .mission-content {
+    width: 100%;
+  }
+
+  .mission-card h2 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .mission-card p {
+    font-size: 13px;
+  }
+
+  .mission-illustration {
+    position: absolute;
+
+    right: 44px;
+    top: 70px;
+
+    width: 130px;
+    height: 145px;
+  }
+
+  .mission-image-slot {
+    width: 110px;
+    height: 90px;
+  }
+
+  .completion-ring {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 40px;
+    height: 40px;
+  }
+
+
+  /* ---------- Rituals ---------- */
+
+  .ritual-row {
+    min-height: 54px;
+  }
+
+  .ritual-label {
+    font-size: 13px;
+  }
+
+
+  /* ---------- Week chart ---------- */
+
+  .week-chart {
+    height: 110px;
+  }
+
+  .week-bar-track {
+    height: 88px;
+  }
+
+
+  /* ---------- Bottom navigation ---------- */
+
+  .bottom-navigation {
+    position: fixed;
+
+    left: 50%;
+    right: auto;
+    bottom: 30px;
+
+    width: 568px;
+    height: 80px;
+
+    padding: 10px 28px;
+
+    border-radius: 40px;
+
+    transform: translateX(-50%);
+
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: center;
+
+    box-shadow:
+      0 8px 28px rgba(53, 42, 32, 0.14);
+  }
+
+  .bottom-item {
+    height: 52px;
+
+    justify-content: center;
+
+    padding-top: 0;
+  }
+
+  .bottom-add {
+    top: -16px;
+
+    width: 56px;
+    height: 56px;
+  }
+
+  .home-indicator {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+:root[data-theme='dark'] .bottom-navigation {
+  box-shadow:
+    0 10px 32px rgba(0, 0, 0, 0.28);
+}
+
+
+
+/* Overview row layout — responsive structural refinement */
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.overview > .greeting {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.overview-top-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1fr);
+  align-items: stretch;
+  gap: 24px;
+  width: 100%;
+  min-width: 0;
+}
+
+.overview-top-row > .mission-card,
+.overview-top-row > .rituals-card {
+  width: 100%;
+  min-width: 0;
+  min-height: 236px;
+  height: 100%;
+  margin: 0;
+}
+
+.overview-top-row > .mission-card {
+  box-sizing: border-box;
+}
+
+.overview-data-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 24px;
+  width: 100%;
+  min-width: 0;
+  margin-top: 8px;
+}
+
+.overview-data-row > .goals-card,
+.overview-data-row > .week-card,
+.overview-data-row > .glance-card {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  margin: 0;
+  align-self: stretch;
+}
+
+.overview-data-row > .glance-card {
+  box-sizing: border-box;
+}
+
+.overview > .streak-card {
+  width: min(100%, 560px);
+  min-height: 72px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* iPad portrait: balanced two-card top row and three distinct data cards */
+@media (min-width: 700px) and (max-width: 999px) {
+  .overview {
+    width: min(calc(100% - 48px), 788px);
+    margin-inline: auto;
+    gap: 22px;
+  }
+
+  .overview-top-row {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .overview-top-row > .mission-card,
+  .overview-top-row > .rituals-card {
+    min-height: 236px;
+  }
+
+  .overview-data-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .overview-data-row > .goals-card,
+  .overview-data-row > .week-card,
+  .overview-data-row > .glance-card {
+    padding: 16px;
+  }
+
+  .overview-data-row .glance-grid {
+    gap: 8px;
+  }
+}
+
+/* Desktop and iPad landscape: generous spacing and centered content */
+@media (min-width: 1000px) {
+  .overview {
+    width: min(calc(100% - 128px), 1072px);
+    margin-inline: auto;
+    gap: 26px;
+  }
+
+  .overview-top-row {
+    grid-template-columns: minmax(0, 1.88fr) minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .overview-data-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 10px;
+  }
+
+  .overview-data-row > .goals-card,
+  .overview-data-row > .week-card,
+  .overview-data-row > .glance-card {
+    padding: 20px;
+  }
+}
+
+/* Mobile: single column with no card overlap */
+@media (max-width: 699px) {
+  .overview {
+    width: 100%;
+    gap: 18px;
+  }
+
+  .overview-top-row,
+  .overview-data-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .overview-top-row > .mission-card,
+  .overview-top-row > .rituals-card,
+  .overview-data-row > .goals-card,
+  .overview-data-row > .week-card,
+  .overview-data-row > .glance-card {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+  }
+
+  .overview > .streak-card {
+    width: 100%;
+    margin: 0;
+  }
+}
